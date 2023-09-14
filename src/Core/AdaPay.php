@@ -21,21 +21,21 @@ class AdaPay
     public static array $header = ['Content-Type:application/json'];
     public static array $headerEmpty = ['Content-Type:multipart/form-data'];
     public static array $headerText = ['Content-Type:text/html'];
+    protected static bool $isDebug;
+    protected static string $logDir = '';
+    protected static string $mqttAccessKey = 'LTAIOP5RkeiuXieW';
+    protected static string $mqttAddress = 'post-cn-0pp18zowf0m.mqtt.aliyuncs.com:1883';
 
     // 不允许修改
-    public static bool $isDebug;
-    public static string $logDir = '';
-    public static string $mqttAccessKey = 'LTAIOP5RkeiuXieW';
-    public static string $mqttAddress = 'post-cn-0pp18zowf0m.mqtt.aliyuncs.com:1883';
-    public static string $mqttGroupId = 'GID_CRHS_ASYN';
-    public static string $mqttInstanceId = 'post-cn-0pp18zowf0m';
-    public string $postCharset = 'utf-8';
-    public array $result = [];
-    public static string $rsaPrivateKey = '';
-    public static string $rsaPrivateKeyFilePath = '';
-    public static string $rsaPublicKey = 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwN6xgd6Ad8v2hIIsQVnbt8a3JituR8o4Tc3B5WlcFR55bz4OMqrG/356Ur3cPbc2Fe8ArNd/0gZbC9q56Eb16JTkVNA/fye4SXznWxdyBPR7+guuJZHc/VW2fKH2lfZ2P3Tt0QkKZZoawYOGSMdIvO+WqK44updyax0ikK6JlNQIDAQAB';
-    public string $signType = 'RSA2';
-    public int $statusCode = 200;
+    protected static string $mqttGroupId = 'GID_CRHS_ASYN';
+    protected static string $mqttInstanceId = 'post-cn-0pp18zowf0m';
+    protected string $postCharset = 'utf-8';
+    protected array $result = [];
+    protected static string $rsaPrivateKey = '';
+    protected static string $rsaPrivateKeyFilePath = '';
+    protected static string $rsaPublicKey = 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwN6xgd6Ad8v2hIIsQVnbt8a3JituR8o4Tc3B5WlcFR55bz4OMqrG/356Ur3cPbc2Fe8ArNd/0gZbC9q56Eb16JTkVNA/fye4SXznWxdyBPR7+guuJZHc/VW2fKH2lfZ2P3Tt0QkKZZoawYOGSMdIvO+WqK44updyax0ikK6JlNQIDAQAB';
+    protected string $signType = 'RSA2';
+    protected int $statusCode = 200;
 
     public function __construct()
     {
