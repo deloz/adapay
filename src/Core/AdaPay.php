@@ -16,12 +16,12 @@ class AdaPay
     public AdaRequests|string $ada_request = '';
     public AdaTools|string $ada_tools = '';
     public static $api_key = '';
-
-    // 不允许修改
     public string $gateWayType = 'api';
     public string $gateWayUrl = '';
     public static array $header = ['Content-Type:application/json'];
     public static array $headerEmpty = ['Content-Type:multipart/form-data'];
+
+    // 不允许修改
     public static array $headerText = ['Content-Type:text/html'];
     public static bool $isDebug;
     public static string $logDir = '';
@@ -37,7 +37,7 @@ class AdaPay
     public string $signType = 'RSA2';
     public int $statusCode = 200;
 
-    public function __construct(public string $gateWayUrl = '')
+    public function __construct()
     {
         $this->ada_request = new AdaRequests();
         $this->ada_tools = new AdaTools();
