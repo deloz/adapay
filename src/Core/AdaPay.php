@@ -15,29 +15,29 @@ class AdaPay
     final public const SDK_VERSION = 'v1.4.4';
     public AdaRequests|string $ada_request = '';
     public AdaTools|string $ada_tools = '';
-    public static string $api_key = '';
+    public static $api_key = '';
+
+    // 不允许修改
     public string $gateWayType = 'api';
     public string $gateWayUrl = '';
     public static array $header = ['Content-Type:application/json'];
     public static array $headerEmpty = ['Content-Type:multipart/form-data'];
     public static array $headerText = ['Content-Type:text/html'];
-    protected static bool $isDebug;
-    protected static string $logDir = '';
-    protected static string $mqttAccessKey = 'LTAIOP5RkeiuXieW';
-    protected static string $mqttAddress = 'post-cn-0pp18zowf0m.mqtt.aliyuncs.com:1883';
+    public static bool $isDebug;
+    public static string $logDir = '';
+    public static string $mqttAccessKey = 'LTAIOP5RkeiuXieW';
+    public static string $mqttAddress = 'post-cn-0pp18zowf0m.mqtt.aliyuncs.com:1883';
+    public static string $mqttGroupId = 'GID_CRHS_ASYN';
+    public static string $mqttInstanceId = 'post-cn-0pp18zowf0m';
+    public string $postCharset = 'utf-8';
+    public array $result = [];
+    public static string $rsaPrivateKey = '';
+    public static string $rsaPrivateKeyFilePath = '';
+    public static $rsaPublicKey = 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwN6xgd6Ad8v2hIIsQVnbt8a3JituR8o4Tc3B5WlcFR55bz4OMqrG/356Ur3cPbc2Fe8ArNd/0gZbC9q56Eb16JTkVNA/fye4SXznWxdyBPR7+guuJZHc/VW2fKH2lfZ2P3Tt0QkKZZoawYOGSMdIvO+WqK44updyax0ikK6JlNQIDAQAB';
+    public string $signType = 'RSA2';
+    public int $statusCode = 200;
 
-    // 不允许修改
-    protected static string $mqttGroupId = 'GID_CRHS_ASYN';
-    protected static string $mqttInstanceId = 'post-cn-0pp18zowf0m';
-    protected string $postCharset = 'utf-8';
-    protected array $result = [];
-    protected static string $rsaPrivateKey = '';
-    protected static string $rsaPrivateKeyFilePath = '';
-    protected static string $rsaPublicKey = 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwN6xgd6Ad8v2hIIsQVnbt8a3JituR8o4Tc3B5WlcFR55bz4OMqrG/356Ur3cPbc2Fe8ArNd/0gZbC9q56Eb16JTkVNA/fye4SXznWxdyBPR7+guuJZHc/VW2fKH2lfZ2P3Tt0QkKZZoawYOGSMdIvO+WqK44updyax0ikK6JlNQIDAQAB';
-    protected string $signType = 'RSA2';
-    protected int $statusCode = 200;
-
-    public function __construct()
+    public function __construct(public string $gateWayUrl = '')
     {
         $this->ada_request = new AdaRequests();
         $this->ada_tools = new AdaTools();
