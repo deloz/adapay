@@ -1,0 +1,34 @@
+{
+    "name": "deloz/adapay",
+    "description": "composer package based on AdaPay official SDK",
+    "homepage": "https://github.com/deloz/adapay",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.0.1",
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "deloz",
+            "homepage": "https://github.com/deloz"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/deloz/adapay/issues"
+    },
+    "require": {
+        "php": "^8.1.21|^8.2.8",
+        "ext-openssl": "*",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "ergebnis/php-cs-fixer-config": "^5.15.1",
+        "phpunit/phpunit": "^10.3.4"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
