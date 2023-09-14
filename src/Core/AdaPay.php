@@ -12,6 +12,7 @@ use Exception;
  */
 class AdaPay
 {
+    final public const SDK_VERSION = 'v1.4.4';
     public AdaRequests|string $ada_request = '';
     public AdaTools|string $ada_tools = '';
     public static string $api_key = '';
@@ -20,6 +21,8 @@ class AdaPay
     public static array $header = ['Content-Type:application/json'];
     public static array $headerEmpty = ['Content-Type:multipart/form-data'];
     public static array $headerText = ['Content-Type:text/html'];
+
+    // 不允许修改
     public static bool $isDebug;
     public static string $logDir = '';
     public static string $mqttAccessKey = 'LTAIOP5RkeiuXieW';
@@ -28,8 +31,6 @@ class AdaPay
     public static string $mqttInstanceId = 'post-cn-0pp18zowf0m';
     public string $postCharset = 'utf-8';
     public array $result = [];
-
-    // 不允许修改
     public static string $rsaPrivateKey = '';
     public static string $rsaPrivateKeyFilePath = '';
     public static string $rsaPublicKey = 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwN6xgd6Ad8v2hIIsQVnbt8a3JituR8o4Tc3B5WlcFR55bz4OMqrG/356Ur3cPbc2Fe8ArNd/0gZbC9q56Eb16JTkVNA/fye4SXznWxdyBPR7+guuJZHc/VW2fKH2lfZ2P3Tt0QkKZZoawYOGSMdIvO+WqK44updyax0ikK6JlNQIDAQAB';
@@ -79,7 +80,7 @@ class AdaPay
             $config_obj = \json_decode($cfg_file_str, true);
         }
 
-        $sdk_version = \defined('SDK_VERSION') ? SDK_VERSION : 'v1.0.0';
+        $sdk_version = \defined('SDK_VERSION') ? self::SDK_VERSION : 'v1.0.0';
         self::$header['sdk_version'] = $sdk_version;
         self::$headerText['sdk_version'] = $sdk_version;
         self::$headerEmpty['sdk_version'] = $sdk_version;
