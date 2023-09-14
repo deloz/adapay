@@ -4,7 +4,7 @@
     "homepage": "https://github.com/deloz/adapay",
     "type": "library",
     "license": "MIT",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "autoload": {
         "classmap": [
             "src/"
@@ -20,7 +20,7 @@
         "issues": "https://github.com/deloz/adapay/issues"
     },
     "require": {
-        "php": "^8.1.21|^8.2.8",
+        "php": "^8.1|^8.2",
         "ext-openssl": "*",
         "ext-curl": "*"
     },
